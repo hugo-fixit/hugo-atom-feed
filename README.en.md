@@ -86,7 +86,7 @@ title: "Hello World"
 date: 2024-08-24T16:06:33+08:00
 hiddenFromFeed: true
 feed:
-  # feed.limit only invalid in section or term page(_index.md).
+  # feed.limit only valid in section or term page(_index.md).
   limit: 10
   fullText: true
 ---

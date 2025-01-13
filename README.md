@@ -86,7 +86,7 @@ title: "Hello World"
 date: 2024-08-24T16:06:33+08:00
 hiddenFromFeed: true
 feed:
-  # feed.limit 仅在分类或标签页面（_index.md）中无效。
+  # feed.limit 仅在分类或标签页面（_index.md）中有效。
   limit: 10
   fullText: true
 ---
