@@ -1,3 +1,70 @@
+# -------------------------------------------------------------------------------------
+# Media Types
+# See: https://gohugo.io/templates/output-formats/#media-types
+# -------------------------------------------------------------------------------------
+
+[mediaTypes]
+  # Options to make output atom.xml files
+  # Warning: The application/atom+xml media type will cause an unknown error in resources.GetRemote!
+  # [mediaTypes."application/atom+xml"]
+  #   suffixes = ["xml"]
+
+# -------------------------------------------------------------------------------------
+# Output Format Definitions
+# See: https://gohugo.io/templates/output-formats/#output-format-definitions
+# -------------------------------------------------------------------------------------
+
+[outputFormats]
+  # Options to make output atom.xml file
+  [outputFormats.atom]
+    # generated file = <baseName>.<mediaType."application/atom+xml".suffixes[0]> = atom.xml
+    baseName = "atom"
+    # Warning: The application/atom+xml media type will cause an unknown error in resources.GetRemote!
+    mediaType = "application/xml"
+    isPlainText = false
+    isHTML = false
+    # rel = "alternate"
+    noUgly = true
+
+# -------------------------------------------------------------------------------------
+# Customizing Output Formats
+# See: https://gohugo.io/templates/output-formats/#customizing-output-formats
+# -------------------------------------------------------------------------------------
+
+[outputs]
+  # <baseURL>/atom.xml
+  home = ["html", "rss", "atom"]
+  # <baseURL>/posts/atom.xml etc.
+  section = ["html", "rss", "atom"]
+  # <baseURL>/tags/foo/atom.xml etc.
+  term = ["html", "rss", "atom"]
+
+[params]
+  # Global Feed config for ATOM feed.
+  [params.feed]
+    # The number of posts to include in the feed. If set to -1, all posts.
+    limit = 10
+    # whether to show the full text content in feed.
+    fullText = true
+
+  # Section page config (all pages in section)
+  [params.section]
+    # Section feed config for ATOM feed.
+    [params.section.feed]
+      # The number of posts to include in the feed. If set to -1, all posts.
+      limit = -1
+      # whether to show the full text content in feed.
+      fullText = false
+
+  # Term list (category or tag) page config
+  [params.list]
+    # Term list feed config for ATOM feed.
+    [params.list.feed]
+      # The number of posts to include in the feed. If set to -1, all posts.
+      limit = -1
+      # whether to show the full text content in feed.
+      fullText = false
+
 [module]
   [module.hugoVersion]
     extended = true
